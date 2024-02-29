@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+:root {
+  /* primary color */
+  --clr-primary-brightBlue: hsl(220, 98%, 61%);
+
+  /* neutral color, them light */
+  --clr-neutral-lightTheme-0: hsl(0, 0%, 98%);
+  --clr-neutral-lightTheme-1: hsl(236, 33%, 92%);
+  --clr-neutral-lightTheme-2: hsl(233, 11%, 84%);
+  --clr-neutral-lightTheme-3: hsl(236, 9%, 61%);
+  --clr-neutral-lightTheme-4: hsl(235, 19%, 35%);
+
+  /* neutral color, them light */
+  --clr-neutral-darkTheme-0: hsl(235, 21%, 11%);
+  --clr-neutral-darkTheme-1: hsl(235, 24%, 19%);
+  --clr-neutral-darkTheme-2: hsl(237, 14%, 26%);
+  --clr-neutral-darkTheme-3: hsl(233, 14%, 35%);
+  --clr-neutral-darkTheme-4: hsl(234, 11%, 52%);
+  --clr-neutral-darkTheme-5: hsl(234, 39%, 85%);
+
+  --clr-neutral-hover: hsl(236, 33%, 92%);
+
+  /* gradient */
+  --clr-gradient-checkBackground: linear-gradient(
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
