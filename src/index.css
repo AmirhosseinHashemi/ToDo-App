@@ -4,14 +4,14 @@
   /* primary color */
   --clr-primary-brightBlue: hsl(220, 98%, 61%);
 
-  /* neutral color, them light */
+  /* neutral color, light theme */
   --clr-neutral-lightTheme-0: hsl(0, 0%, 98%);
   --clr-neutral-lightTheme-1: hsl(236, 33%, 92%);
   --clr-neutral-lightTheme-2: hsl(233, 11%, 84%);
   --clr-neutral-lightTheme-3: hsl(236, 9%, 61%);
   --clr-neutral-lightTheme-4: hsl(235, 19%, 35%);
 
-  /* neutral color, them light */
+  /* neutral color, dark theme */
   --clr-neutral-darkTheme-0: hsl(235, 21%, 11%);
   --clr-neutral-darkTheme-1: hsl(235, 24%, 19%);
   --clr-neutral-darkTheme-2: hsl(237, 14%, 26%);
@@ -28,10 +28,27 @@
   );
 }
 
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
   font-family: "Josefin Sans", sans-serif;
+  background: url(./assets/images/bg-mobile-light.jpg) no-repeat top;
+  background-color: var(--clr-neutral-lightTheme-0);
+  padding: 4.8rem 2.6rem;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
