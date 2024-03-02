@@ -50,6 +50,8 @@ body {
   padding: 4.8rem 2.6rem;
 }
 
+/* General */
+
 button {
   background: none;
   border: none;
@@ -57,7 +59,7 @@ button {
   cursor: pointer;
 }
 
-button:focus {
+button:focus-visible {
   outline: 0.2rem solid var(--clr-neutral-lightTheme-4);
   outline-offset: 0.25rem;
   border-radius: 0.25rem;
@@ -90,5 +92,12 @@ input[type="radio"]:not(:checked):focus {
 }
 
 input[type="radio"]:checked {
-  background: var(--clr-gradient-checkBackground);
+  background-image: url(/src/assets/icons/icon-check.svg),
+    var(--clr-gradient-checkBackground);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+ul {
+  list-style: none;
 }
