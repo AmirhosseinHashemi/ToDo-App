@@ -26,6 +26,9 @@
     hsl(192, 100%, 67%),
     hsl(280, 87%, 65%)
   );
+
+  /* font family */
+  --ff-base: "Josefin Sans", sans-serif;
 }
 
 *,
@@ -41,7 +44,7 @@ html {
 }
 
 body {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: var(--ff-base);
   background: url(./assets/images/bg-mobile-light.jpg) no-repeat top;
   background-color: var(--clr-neutral-lightTheme-0);
   padding: 4.8rem 2.6rem;
@@ -50,5 +53,42 @@ body {
 button {
   background: none;
   border: none;
+  outline: none;
   cursor: pointer;
+}
+
+button:focus {
+  outline: 0.2rem solid var(--clr-neutral-lightTheme-4);
+  outline-offset: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+input:focus {
+  outline: 0.1rem solid var(--clr-neutral-lightTheme-1);
+  outline-offset: 0.5rem;
+  border-radius: 0.1rem;
+}
+
+input[type="radio"]:checked,
+input[type="radio"]:not(:checked) {
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 0.1rem solid var(--clr-neutral-lightTheme-2);
+}
+
+input[type="radio"]:checked:focus,
+input[type="radio"]:not(:checked):focus {
+  outline: none;
+}
+
+input[type="radio"]:checked {
+  background: var(--clr-gradient-checkBackground);
 }
