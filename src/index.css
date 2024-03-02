@@ -53,6 +53,7 @@ body {
 /* General */
 
 button {
+  font-family: inherit;
   background: none;
   border: none;
   outline: none;
