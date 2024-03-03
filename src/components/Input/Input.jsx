@@ -11,6 +11,7 @@ function Input({ setTasks }) {
     const newTask = {
       id: crypto.randomUUID().slice(-12),
       description: input,
+      completed: false,
     };
 
     setTasks((preTasks) => [...preTasks, newTask]);

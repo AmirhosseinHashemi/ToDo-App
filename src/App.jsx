@@ -5,11 +5,18 @@ import ThemeButton from "./components/ThemeButton/ThemeButton";
 import Input from "./components/Input/Input";
 import Main from "./components/Main/Main";
 import ItemsList from "./components/ItemsList/ItemsList";
-import Item from "./components/Item/Item";
 import Footer from "./components/Footer/Footer";
 
 function App() {
   const [tasks, setTasks] = useState([]);
+
+  function handleTaskAsDone(id) {
+    setTasks((preTasks) =>
+      preTasks.map((task) =>
+        task.id === id ? { ...task, completed: true } : task
+      )
+    );
+  }
 
   return (
     <>
@@ -19,12 +26,11 @@ function App() {
       </Header>
 
       <Main>
-        <ItemsList>
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-        </ItemsList>
+        <ItemsList
+          tasks={tasks}
+          setTasks={setTasks}
+          onHandleAsDone={handleTaskAsDone}
+        ></ItemsList>
       </Main>
 
       <Footer />

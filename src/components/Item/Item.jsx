@@ -1,11 +1,24 @@
+import PropTypes from "prop-types";
 import styles from "./Item.module.css";
 
-function Item() {
+function Item({ toDo, setTasks, onHandleAsDone }) {
+  function handleDeleteItem() {
+    setTasks((preTasks) =>
+      preTasks.filter((taskObj) => taskObj.id !== toDo.id)
+    );
+  }
+
   return (
     <li className={styles.item}>
-      <input type="radio" name="" id="" />
-      <p>to do description</p>
-      <button aria-label="delete todo">
+      <input
+        type="radio"
+        name=""
+        id=""
+        checked={toDo.completed}
+        onChange={() => onHandleAsDone(toDo.id)}
+      />
+      <p>{toDo.description}</p>
+      <button onClick={handleDeleteItem} aria-label="delete todo">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"
@@ -18,5 +31,12 @@ function Item() {
     </li>
   );
 }
+
+Item.propTypes = {
+  description: PropTypes.string,
+  toDo: PropTypes.object,
+  setTasks: PropTypes.func,
+  onHandleAsDone: PropTypes.func,
+};
 
 export default Item;

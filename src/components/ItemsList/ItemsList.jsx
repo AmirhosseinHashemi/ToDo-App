@@ -1,12 +1,26 @@
 // import styles from "./ItemsList.module.css";
 import PropTypes from "prop-types";
+import Item from "../Item/Item";
 
-function ItemsList({ children }) {
-  return <ul>{children}</ul>;
+function ItemsList({ tasks, setTasks, onHandleAsDone }) {
+  return (
+    <ul>
+      {tasks.map((task) => (
+        <Item
+          toDo={task}
+          setTasks={setTasks}
+          key={task.id}
+          onHandleAsDone={onHandleAsDone}
+        />
+      ))}
+    </ul>
+  );
 }
 
 ItemsList.propTypes = {
-  children: PropTypes.any,
+  tasks: PropTypes.array,
+  setTasks: PropTypes.func,
+  onHandleAsDone: PropTypes.func,
 };
 
 export default ItemsList;
