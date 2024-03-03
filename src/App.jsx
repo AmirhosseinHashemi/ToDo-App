@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Header from "./components/Header/Header";
 import ThemeButton from "./components/ThemeButton/ThemeButton";
 import Input from "./components/Input/Input";
@@ -7,11 +9,13 @@ import Item from "./components/Item/Item";
 import Footer from "./components/Footer/Footer";
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+
   return (
     <>
       <Header>
         <ThemeButton />
-        <Input />
+        <Input setTasks={setTasks} />
       </Header>
 
       <Main>
