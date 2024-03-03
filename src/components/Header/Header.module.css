@@ -12,3 +12,10 @@
   letter-spacing: 1rem;
   color: var(--clr-neutral-lightTheme-0);
 }
+
+@media only screen and (min-width: 1440px) {
+  .header {
+    max-width: 45rem;
+    margin: 0 auto;
+  }
+}

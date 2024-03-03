@@ -41,3 +41,21 @@
 .footer__filtering .activeBtn {
   color: var(--clr-primary-brightBlue);
 }
+
+@media only screen and (min-width: 1440px) {
+  .footer {
+    position: relative;
+    max-width: 45rem;
+    margin: 0 auto;
+  }
+
+  .footer__filtering {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-60%);
+    margin-top: 0;
+    box-shadow: none;
+  }
+}
