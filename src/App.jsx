@@ -10,6 +10,11 @@ import Message from "./components/Message/Message";
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [typeOfTasks, setTypeOfTasks] = useState("all");
+
+  const unCompletedTaskNumbers = tasks.filter(
+    (task) => task.completed === false
+  ).length;
 
   function handleTaskAsDone(id) {
     setTasks((preTasks) =>
@@ -17,6 +22,10 @@ function App() {
         task.id === id ? { ...task, completed: true } : task
       )
     );
+  }
+
+  function handleClearCompleted() {
+    setTasks((preTasks) => preTasks.filter((task) => task.completed === false));
   }
 
   return (
@@ -32,13 +41,21 @@ function App() {
         <Main>
           <ItemsList
             tasks={tasks}
+            typeOfTasks={typeOfTasks}
             setTasks={setTasks}
             onHandleAsDone={handleTaskAsDone}
           ></ItemsList>
         </Main>
       )}
 
-      {tasks.length !== 0 && <Footer />}
+      {tasks.length !== 0 && (
+        <Footer
+          unCompletedTaskNumbers={unCompletedTaskNumbers}
+          onClearCompleted={handleClearCompleted}
+          typeOfTasks={typeOfTasks}
+          setTypeOfTasks={setTypeOfTasks}
+        />
+      )}
     </>
   );
 }
