@@ -6,6 +6,7 @@ import Input from "./components/Input/Input";
 import Main from "./components/Main/Main";
 import ItemsList from "./components/ItemsList/ItemsList";
 import Footer from "./components/Footer/Footer";
+import Message from "./components/Message/Message";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -25,15 +26,19 @@ function App() {
         <Input setTasks={setTasks} />
       </Header>
 
-      <Main>
-        <ItemsList
-          tasks={tasks}
-          setTasks={setTasks}
-          onHandleAsDone={handleTaskAsDone}
-        ></ItemsList>
-      </Main>
+      {tasks.length === 0 ? (
+        <Message message={"Add Your First To Do. 🌱"} />
+      ) : (
+        <Main>
+          <ItemsList
+            tasks={tasks}
+            setTasks={setTasks}
+            onHandleAsDone={handleTaskAsDone}
+          ></ItemsList>
+        </Main>
+      )}
 
-      <Footer />
+      {tasks.length !== 0 && <Footer />}
     </>
   );
 }

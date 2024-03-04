@@ -1,0 +1,9 @@
+.message {
+  font-family: inherit;
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: 400;
+  color: var(--clr-neutral-lightTheme-4);
+  text-transform: capitalize;
+  margin-top: 8rem;
+}
