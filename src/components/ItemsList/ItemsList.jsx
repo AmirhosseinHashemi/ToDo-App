@@ -1,6 +1,7 @@
-// import styles from "./ItemsList.module.css";
+import styles from "./ItemsList.module.css";
 import PropTypes from "prop-types";
 import Item from "../Item/Item";
+import Message from "../Message/Message";
 
 function ItemsList({ tasks, setTasks, onHandleAsDone, typeOfTasks }) {
   let toDisplayTask;
@@ -18,15 +19,19 @@ function ItemsList({ tasks, setTasks, onHandleAsDone, typeOfTasks }) {
   }
 
   return (
-    <ul>
-      {toDisplayTask.map((task) => (
-        <Item
-          toDo={task}
-          setTasks={setTasks}
-          key={task.id}
-          onHandleAsDone={onHandleAsDone}
-        />
-      ))}
+    <ul className={styles.list}>
+      {toDisplayTask.length === 0 ? (
+        <Message message={`There is no ${typeOfTasks} task 🌵`} />
+      ) : (
+        toDisplayTask.map((task) => (
+          <Item
+            toDo={task}
+            setTasks={setTasks}
+            key={task.id}
+            onHandleAsDone={onHandleAsDone}
+          />
+        ))
+      )}
     </ul>
   );
 }

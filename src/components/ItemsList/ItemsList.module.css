@@ -1,0 +1,11 @@
+.list > p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--clr-neutral-lightTheme-4);
+
+  background-color: var(--clr-neutral-lightTheme-0);
+  padding: 1.8rem 1.6rem;
+  border-bottom: 0.1rem solid var(--clr-neutral-lightTheme-1);
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+}

@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import styles from "./Message.module.css";
+// import styles from "./Message.module.css";
 
 function Message({ message }) {
-  return <p className={styles.message}>{message}</p>;
+  return <p>{message}</p>;
 }
 
 Message.propTypes = {
