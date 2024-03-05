@@ -7,6 +7,7 @@ function Input({ setTasks }) {
 
   function handleSubmitInput(ev) {
     ev.preventDefault();
+    if (!input) return;
 
     const newTask = {
       id: crypto.randomUUID().slice(-12),
