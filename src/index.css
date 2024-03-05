@@ -102,6 +102,22 @@ input[type="radio"]:checked {
   background-position: center;
 }
 
+input[type="radio"]:checked + p {
+  position: relative;
+  color: var(--clr-neutral-lightTheme-2);
+}
+
+input[type="radio"]:checked + p::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 0.01rem;
+  transform: translate(0, -50%);
+  background-color: var(--clr-neutral-lightTheme-3);
+}
+
 ul {
   list-style: none;
 }
