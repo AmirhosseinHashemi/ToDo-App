@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Header from "./components/Header/Header";
-import ThemeButton from "./components/ThemeButton/ThemeButton";
+// import ThemeButton from "./components/ThemeButton/ThemeButton";
 import Input from "./components/Input/Input";
 import Main from "./components/Main/Main";
 import ItemsList from "./components/ItemsList/ItemsList";
@@ -31,7 +31,7 @@ function App() {
   return (
     <>
       <Header>
-        <ThemeButton />
+        {/* <ThemeButton /> */}
         <Input setTasks={setTasks} />
       </Header>
 
